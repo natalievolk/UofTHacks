@@ -1,0 +1,26 @@
+* {
+    box-sizing:border-box;
+    margin:0;
+}
+
+nav {
+    background-color:aquamarine;
+    padding:30px, 60px;
+    display:flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left:15px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a {
+    text-decoration: none;
+}

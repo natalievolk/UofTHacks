@@ -1,10 +1,9 @@
 from flask import Flask, Response, request
 from twilio import twiml
 from twilio.twiml.messaging_response import MessagingResponse
-#from flask_apscheduler import APScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 
 from journal import send_reminder, receive_message
-from apscheduler.schedulers.background import BackgroundScheduler
 
 app = Flask(__name__)
 
@@ -16,12 +15,14 @@ scheduler.start()
 def test_app():
     return Response("heheh hello"), 200
 
+
 @app.route("/respondsms", methods=["POST"])
 def respondsms():
     response = MessagingResponse()
     inbound_message = request.form["Body"]
+    phone_number = request.form["From"]
 
-    reply_message = receive_message(inbound_message)
+    reply_message = receive_message(inbound_message, phone_number)
 
     response.message(reply_message)
 
@@ -29,3 +30,7 @@ def respondsms():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+

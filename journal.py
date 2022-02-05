@@ -1,4 +1,5 @@
 from auth import ACCOUNT_SID, AUTH_TOKEN, OUTGOING_PHONE, INCOMING_PHONE
+from database import get_db_connection, add_journal_entry
 
 from datetime import datetime
 from twilio.rest import Client
@@ -12,7 +13,7 @@ client = Client(ACCOUNT_SID, AUTH_TOKEN)
 def send_reminder():
 
     current_time = datetime.now().strftime("%H:%M")
-    send_time = "15:54"
+    send_time = "22:00"
 
     if current_time == send_time:
         message = client.messages.create(
@@ -24,11 +25,11 @@ def send_reminder():
         print("message sent to", message.to, "at", send_time)
 
 
-def receive_message(inbound_message):
+def receive_message(inbound_message, phone_number):
     inbound_message = str(inbound_message).strip().split(" ")
 
     if inbound_message[0] in ["JOURNAL:", "journal:"]:
-        reply = create_journal_entry(inbound_message)
+        reply = create_journal_entry(inbound_message, phone_number)
     elif inbound_message[0] in ["HELP", 'help']:
         reply = get_help_message()
     elif (inbound_message[0]).lower() in ["hello", "hi", "hey"]:
@@ -40,11 +41,13 @@ def receive_message(inbound_message):
     return reply
 
 
-def create_journal_entry(inbound_message):
+def create_journal_entry(inbound_message, phone_number):
     journal_entry = " ".join(inbound_message[1:])
-    print(journal_entry)
+    phone_number = str(phone_number)
+    timestamp = datetime.now()
 
-    # ADD TO SQL DATABASE
+    db = get_db_connection()
+    add_journal_entry(db, timestamp, phone_number, journal_entry)
 
     return "Your journal entry has been successfully recorded!"
 

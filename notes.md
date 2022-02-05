@@ -37,3 +37,4 @@ npm i bcryptjs # for password hashing
 ## To-do
 * phone number parsing proper form
 * email confirmation
+* database server, website, get Flask to run continuously?? - How

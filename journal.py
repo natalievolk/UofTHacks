@@ -1,5 +1,5 @@
 from auth import ACCOUNT_SID, AUTH_TOKEN, OUTGOING_PHONE, INCOMING_PHONE
-from database import get_db_connection, add_journal_entry
+from database import add_journal_entry
 
 from datetime import datetime
 from twilio.rest import Client
@@ -46,8 +46,7 @@ def create_journal_entry(inbound_message, phone_number):
     phone_number = str(phone_number)
     timestamp = datetime.now()
 
-    db = get_db_connection()
-    add_journal_entry(db, timestamp, phone_number, journal_entry)
+    add_journal_entry(timestamp, phone_number, journal_entry)
 
     return "Your journal entry has been successfully recorded!"
 

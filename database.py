@@ -34,7 +34,9 @@ def create_entries_table(db):
     print("entries table now exists")
 
 
-def add_journal_entry(db, timestamp, phone_number, entry):
+def add_journal_entry(timestamp, phone_number, entry):
+    db = get_db_connection()
+    create_entries_table(db)
     cursor = db.cursor()
 
     sql_query = """
@@ -49,13 +51,7 @@ def add_journal_entry(db, timestamp, phone_number, entry):
 
     print(cursor.rowcount, "record inserted")
 
+
+
 if __name__ == "__main__":
-    db = get_db_connection()
-
-    timestamp = datetime.now()
-    print(timestamp)
-    
-    phone_number = "+16475354467"
-    entry = "hello this is my first journal entry!"
-
-    add_journal_entry(db, timestamp, phone_number, entry)
+    pass

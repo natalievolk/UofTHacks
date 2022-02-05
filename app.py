@@ -5,6 +5,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 from journal import send_reminder, receive_message
 
+
 app = Flask(__name__)
 
 scheduler = BackgroundScheduler()
@@ -27,6 +28,7 @@ def respondsms():
     response.message(reply_message)
 
     return Response(str(response), mimetype="application/xml"), 200
+
 
 if __name__ == "__main__":
     app.run(debug=True)

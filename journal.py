@@ -4,8 +4,6 @@ from database import add_journal_entry
 from datetime import datetime
 from twilio.rest import Client
 
-#import os
-
 
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 

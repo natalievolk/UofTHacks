@@ -12,4 +12,10 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
+router.get('/login', (req, res) => {
+    //render index.hbs page
+    res.render('login');
+});
+
+
 module.exports = router;

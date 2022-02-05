@@ -55,7 +55,4 @@ exports.register = (req, res) => {
             })
         }
     });
-
-
-    // res.send("form submitted!");
 }

@@ -52,6 +52,7 @@ app.use(express.static(publicDirectory));
 // get routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+app.use('/login', require('./routes/login'));
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3001, 

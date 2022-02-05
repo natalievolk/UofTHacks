@@ -1,12 +1,18 @@
 // create an express app
-const express = require("express")
-const app = express()
+const express = require("express");
+const path = require("path");
+const app = express();
+
 
 var mysql = require('mysql');
 
 // dotenv - store passwords & secure info
 const dotenv = require('dotenv');
 dotenv.config({ path: './.env' })
+
+// all handlebar files must be in views directory
+app.set('view engine', 'hbs');
+const publicDirectory = path.join(__dirname, './public'); //__dirname is current directory
 
 var db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
@@ -15,22 +21,37 @@ var db = mysql.createConnection({
   database: process.env.DATABASE
 });
 
+// require user to put phone number
 db.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  db.query("CREATE TABLE IF NOT EXISTS `uofthacks`.`users`( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(100) NOT NULL , `email` VARCHAR(100) NOT NULL , `password` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;", function (err, result) {
-    if (err) throw err;
-    console.log("Login table created");
+  // note in query we CANNOT put quotes!! Leave id, name, cell, etc. as is...
+  db.query(
+    `CREATE TABLE IF NOT EXISTS uofthacks.users( 
+      id INT NOT NULL AUTO_INCREMENT ,
+      name VARCHAR(100) NOT NULL ,
+      cell VARCHAR(15) NOT NULL ,
+      email VARCHAR(100) NOT NULL ,
+      password VARCHAR(255) NOT NULL ,
+      PRIMARY KEY (id)
+    )
+    ENGINE = InnoDB;`,
+    function (err, result) {
+      if (err) throw err;
+    console.log("Login table called users created");
   });
 });
 
-// use the express-static middleware - everything in the /public directory to be used (HTML, CSS, JS)
-app.use(express.static("public"))
+// parse url-encoded bodies (from HTML forms)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// define the first route
-app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>")
-})
+// use the express-static middleware - everything in the /public directory to be used (HTML, CSS, JS)
+app.use(express.static(publicDirectory));
+
+// get routes
+app.use('/', require('./routes/pages'));
+app.use('/auth', require('./routes/auth'));
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3001, 

@@ -1,8 +1,16 @@
 from flask import Flask, Response, request
 from twilio import twiml
 from twilio.twiml.messaging_response import MessagingResponse
+#from flask_apscheduler import APScheduler
+
+from journal import send_reminder
+from apscheduler.schedulers.background import BackgroundScheduler
 
 app = Flask(__name__)
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=send_reminder, trigger="interval", seconds=60)
+scheduler.start()
 
 @app.route("/")
 def test_app():

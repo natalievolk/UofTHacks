@@ -1,6 +1,6 @@
 # Journally - A journal entry a day. All through text.
 ## :star: :pencil2: :pencil: :gift:
-![](/images/main-page.png)
+![](images/main-page.png)
 Welcome to Journally! Where we restore our memories one journal, one day at a time. Journally sends you a daily reminder via text, where you respond by writing a short journal, where you can access these journals later on the Journally website.
 
 ## :books: Technologies :books:

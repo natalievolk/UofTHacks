@@ -85,6 +85,7 @@ School vector created by pch.vector - www.freepik.com</a> */
     /*background-attachment: fixed;*/
     background-size: cover;
     background-position: center;
+    z-index: -1;
   }
   
   /* If you want the content centered horizontally and vertically */
@@ -101,3 +102,19 @@ School vector created by pch.vector - www.freepik.com</a> */
     width: 150px;
     border-radius: 50%;
   }
+
+  .header {
+    padding: 15px;
+    text-align: center;
+    color: black;
+    background: #eaf3fa;
+    font-size: 30px;
+    z-index: 1;
+  }
+
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    background-color: #eaf3fa !important;
+    color: #86d1cd !important;
+    border-color: #86d1cd !important;
+    margin: 5px;
+}

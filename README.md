@@ -3,6 +3,8 @@
 ![](images/main-page.PNG)
 Welcome to Journally! Where we restore our memories one journal, one day at a time. Journally sends you a daily reminder via text, where you respond by writing a short journal, where you can access these journals later on the Journally website.
 
+[Quick Demo Video](https://www.youtube.com/watch?v=Z_z_92_XajY&t=3s)
+
 ## :books: Technologies :books:
 * **Twilio** to send our registered users *daily* messages to Journal!
 * Secure `MySQL` database to to store user registration info and their journally entries

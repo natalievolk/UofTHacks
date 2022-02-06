@@ -17,6 +17,8 @@ const publicDirectory = path.join(__dirname, './public'); //__dirname is current
 var db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
+  port: process.env.DATABASE_PORT,
+  //unix_socket: process.env.UNIX_SOCKET,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE
 });

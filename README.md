@@ -1,5 +1,5 @@
 # Journally - A journal entry a day. All through text.
-## :star:
+## :star: :star: :star:
 Welcome to Journally! Where we restore our memories one journal, one day at a time.
 ## :books: "Technologies
 * **Twilio** to send our registered users *daily* messages to Journal!

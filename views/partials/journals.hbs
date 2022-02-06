@@ -22,16 +22,52 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/journals.css">
         <link rel="stylesheet" href="login-register.css">
+        <style>
+
+            .headings {
+                background: #eaf3fa;
+            }
+
+            .headings h1 {
+                font-family: "Trattatello", "Brush Script MT", "Papyrus";
+                padding: 10px;
+                text-align: center;
+                color: black;
+                font-size: 50px;
+                font-weight: bold !important;
+                z-index: 1;
+            }
+
+            .display-messages {
+                margin-left:10px;
+            }
+
+            #promise {
+                font-size: 70%;
+            }
+
+            .btn-outline-primary {
+                font-size: 80%;
+                margin-right:5px;
+                margin-left:5px;
+                width:auto;
+                margin-top:18px;
+            }
+            .btn-outline-primary:hover {
+                font-weight: normal;
+            }
+        </style>
     </head>
     <body>
         
-        <nav>
-            <h4>Journally</h4>
+        <nav class="headings">
+            <h1>Journally</h1>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="login">Login</a></li>
-                <li><a href="register">Register</a></li>
+                <li><a class="btn btn-outline-primary btn-lg" href="/"role="button">Home</a></li>
+                <li><a class="btn btn-outline-primary btn-lg" href="login" role="button">Login</a></li>
+                <li><a class="btn btn-outline-primary btn-lg" href="register"role="button">Register</a></li>
             </ul>
+
         </nav>
         <h1 id="page-title">&#10024Qingyuan's Journals&#10024</h1>
         <!--
@@ -84,7 +120,7 @@
 
                 <div class="col col-sm">
                     <p class="date">2022-1-29</p>
-                    <p class="text">This is my first journal. I had a great day</p>
+                    <p class="text">Keep moving! Tomorrow will be great. Today was really fun I hung out with my friends in the library.</p>
                 </div>
             </div>
             <div class="row">

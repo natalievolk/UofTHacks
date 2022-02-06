@@ -104,17 +104,25 @@ School vector created by pch.vector - www.freepik.com</a> */
   }
 
   .header {
+    font-family: "Trattatello", "Brush Script MT", "Papyrus";
     padding: 15px;
     text-align: center;
     color: black;
     background: #eaf3fa;
-    font-size: 30px;
+    font-size: 50px;
+    font-weight: bold !important;
     z-index: 1;
   }
+
+.slogan {
+    color: #e68639;
+    font-family: "Copperplate";
+    font-weight: bold;
+}
 
 .btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
     background-color: #eaf3fa !important;
     color: #86d1cd !important;
     border-color: #86d1cd !important;
-    margin: 5px;
+    margin: 10px;
 }

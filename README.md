@@ -1,6 +1,8 @@
 # Journally - A journal entry a day. All through text.
 ## :star: :pencil2: :pencil: :gift:
-Welcome to Journally! Where we restore our memories one journal, one day at a time. Restoration is ever important in today's busy world. Take a step back every day and appreciate your work and those around you. There's always something to be grateful of and Journally reminds you of that!
+![](/images/main-page.png)
+Welcome to Journally! Where we restore our memories one journal, one day at a time. Journally sends you a daily reminder via text, where you respond by writing a short journal, where you can access these journals later on the Journally website.
+
 ## :books: Technologies :books:
 * **Twilio** to send our registered users *daily* messages to Journal!
 * Secure `MySQL` database to to store user registration info and their journally entries

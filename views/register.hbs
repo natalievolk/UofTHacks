@@ -25,19 +25,17 @@
     <body>
         <link rel="stylesheet" href="/css/login-register.css">
         
-        <nav>
-            <h4>Journal</h4>
+        <nav class="headings">
+            <h1>Journally</h1>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><a class="btn btn-outline-primary btn-lg" href="/"role="button">Home</a></li>
+                <li><a class="btn btn-outline-primary btn-lg" href="login" role="button">Login</a></li>
+                <li><a class="btn btn-outline-primary btn-lg" href="register"role="button">Register</a></li>
             </ul>
-        </nav>
-        <div class="headings">
-        
-        <h1>Register</h1>
-        <div>sign up and get reminders to take your journals!</div>
-        <div id="promise">We'll never share your personal information, we promise</div>
+        </nav>        
+        <div class="display-messages">
+            <div>Sign up and get reminders to take your journals!</div>
+            <div id="promise">We'll never share your personal information</div>
         </div>
 
         <div class="container mt-4">
@@ -75,7 +73,7 @@
                           <label class="form-check-label" for="exampleCheck1">I agree to the terms and conditions.</label>
                         </div>
                         <div class="button">
-                                <button type="submit" class="btn btn-outline-primary">Register!</button>
+                                <button type="submit" class="btn btn-outline-primary login-register">Register!</button>
                             </div>
                     </form>
                 </div>

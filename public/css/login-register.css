@@ -1,9 +1,11 @@
+
 .card {
+    
     width:40%;
     margin-left:10%;
 }
 
-.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+.button .login-register, .login-register:active, .login-register:visited {
     background-color: #eaf3fa !important;
     color: #86d1cd !important;
     border-color: #86d1cd !important;
@@ -12,6 +14,11 @@
     margin:0 auto;
     display: block;
 }
+
+.login-register:hover {
+    background-color: #d0dfeb !important;
+}
+
 
 
 .card {
@@ -27,4 +34,36 @@
     font-weight: bold;
     font-size: 20px;
     padding: 5px;
+}
+
+.headings {
+    background: #eaf3fa;
+}
+
+.headings h1 {
+    font-family: "Trattatello", "Brush Script MT", "Papyrus";
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    font-weight: bold !important;
+    z-index: 1;
+}
+
+.display-messages {
+    margin-left:10px;
+}
+
+#promise {
+    font-size: 70%;
+}
+
+.btn-outline-primary {
+    font-size: 80%;
+    margin-right:5px;
+    margin-left:5px;
+    width:auto;
+}
+.btn-outline-primary:hover {
+    font-weight: normal;
 }

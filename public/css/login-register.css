@@ -1,4 +1,38 @@
+
 .card {
+    
     width:40%;
     margin-left:10%;
+}
+
+.headings {
+    background: #eaf3fa;
+}
+
+.headings h1 {
+    font-family: "Trattatello", "Brush Script MT", "Papyrus";
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    font-weight: bold !important;
+    z-index: 1;
+}
+
+.display-messages {
+    margin-left:10px;
+}
+
+#promise {
+    font-size: 70%;
+}
+
+.btn-outline-primary {
+    font-size: 80%;
+    margin-right:5px;
+    margin-left:5px;
+    width:auto;
+}
+.btn-outline-primary:hover {
+    font-weight: normal;
 }

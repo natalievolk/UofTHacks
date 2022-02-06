@@ -1,6 +1,11 @@
 read_sms.py
 auth.py
 
+.DS_Store
+public/.DS_Store
+
+public/unused_images
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

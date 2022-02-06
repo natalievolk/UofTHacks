@@ -34,3 +34,70 @@ nav li a:hover {
 .form-group {
     margin-bottom:15px;
 }
+
+/*
+body {
+    background-image: url('../journalling_image_3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+*/
+/* background image attribution: <a href='https://www.freepik.com/vectors/school'>
+School vector created by pch.vector - www.freepik.com</a> */
+
+
+/* Split the screen in half */
+/*
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  */
+  
+  /* Control the left side */
+  .left {
+    /*left: 0;*/
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 100vh;
+  }
+  
+  /* Control the right side */
+  .right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 60vw;
+
+    /*right: 0;*/
+    background-image: url('../journalling_image_375_600.png');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* Style the image inside the centered container, if needed */
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }

@@ -1,7 +1,7 @@
 # Journally - A journal entry a day. All through text.
-## :star: :star: :star:
+## :star: :pencil2: :pencil: :gift:
 Welcome to Journally! Where we restore our memories one journal, one day at a time. Restoration is ever important in today's busy world. Take a step back every day and appreciate your work and those around you. There's always something to be grateful of and Journally reminds you of that!
-## :books: "Technologies
+## :books: Technologies :books:
 * **Twilio** to send our registered users *daily* messages to Journal!
 * Secure `MySQL` database to to store user registration info and their journally entries
 * `Flask` to *send* SMS from a user database of phone numbers
@@ -10,7 +10,7 @@ Welcome to Journally! Where we restore our memories one journal, one day at a ti
 * `Express.js` backend to host Journally
 * `Bootstrap` for footers and buttons and a *responsive design*
 
-## :computer: Get Journally on your Local Computer
+## :computer: Get Journally on your Local Computer :computer:
 * see `notes.md` for dependencies
 * `Flask` and a virtual environment also required
 * To run Flask (send and receive SMS messages), `cd sms_backend`, then `python app.py` in your terminal
@@ -22,14 +22,14 @@ Welcome to Journally! Where we restore our memories one journal, one day at a ti
 * To run the Journally website, ensure you're in the root directory and run `npm start`, then navigate to `localhost:3001`
 * Make sure you have all the `Express.js` dependencies in `notes.md` installed!
 
-## :footprints: Next Steps:
+## :footprints: Next Steps :footprints:
 * allow simple markups like bolds in texts
 * allow user to rate their day on a scale
 * sort by scale feature
 * feel free to contribute!! Let's Journally together
 * encouraging/restoring quotes
 
-## :pray: Contributors and Acknowledgments
+## :pray: Contributors and Acknowledgments :pray:
 * made by Natalie and Qingyuan
 * thank you to virtually ALL relevant the documentations and online tutorials - we couldn't have done it without you
 * thank you to U of T Hacks for giving us this restoring opportunity :)

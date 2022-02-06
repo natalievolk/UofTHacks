@@ -2,3 +2,29 @@
     width:40%;
     margin-left:10%;
 }
+
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    background-color: #eaf3fa !important;
+    color: #86d1cd !important;
+    border-color: #86d1cd !important;
+    margin: 8px;
+    width: 120px;
+    margin:0 auto;
+    display: block;
+}
+
+
+.card {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-header {
+    background-color: #86d1cd;
+    position: center;
+    text-align: center;
+    font-family: "Copperplate";
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}

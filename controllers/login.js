@@ -34,13 +34,13 @@ exports.login = (req, res) => {
         if (results.length === 0) {
             return res.render('login', {
                 success: false,
-                message: "couldn't find email in database"
+                message: "Couldn't find email in database, did you register?"
             });
         } bcrypt.compare(password, results[0].password, (err2, res2) => {
             if (err2) {
                 return res.render('login', {
                     success: false,
-                    message: "server error"
+                    message: "Server error"
                 });
             } if (res2) {
                 //passwords match - successful login
@@ -48,12 +48,12 @@ exports.login = (req, res) => {
                     success: true,
                     email: results[0].email,
                     username: results[0].name,
-                    message: "login successful"
+                    message: "Login successful"
                 });                  
             } else {
                 return res.render('login', {
                     success: false,
-                    message: "password incorrect!"
+                    message: "Password incorrect!"
                 });                
             }
         })

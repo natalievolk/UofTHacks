@@ -4,14 +4,14 @@
 
 ```bash
 npm init -y
-npm install express --save
+npm i express --save
 
 # extra modules in /node_modules
-npm install express-flash --save
-npm install express-session --save
-npm install express-validator --save
-npm install method-override --save
-npm install mysql --save
+npm i express-flash --save
+npm i express-session --save
+npm i express-validator --save
+npm i method-override --save
+npm i mysql --save
 npm i dotenv
 npm i nodemon --save # auto refresh
 
@@ -37,3 +37,7 @@ npm i bcryptjs # for password hashing
 ## To-do
 * phone number parsing proper form
 * email confirmation
+
+## NEXT STEPS
+* see readme.md
+* email verification

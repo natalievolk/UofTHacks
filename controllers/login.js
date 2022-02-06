@@ -11,7 +11,6 @@ var db = mysql.createConnection({
 });
 
 exports.login = (req, res) => {
-    console.log("hello?");
     console.log(req.body);
     // sample req.body
     //{
@@ -19,12 +18,11 @@ exports.login = (req, res) => {
     //   password: 'bob123',
     // }
     const { email, password } = req.body;
-    console.log(req.body);
     let hashedPassword = bcrypt.hash(password, 8); // 8 is num of rounds
     
     //check password correct
     db.query(`
-        SELECT password
+        SELECT password, email, name
         FROM users
         WHERE email = ?
     `, [email], (err, results) => {
@@ -35,32 +33,47 @@ exports.login = (req, res) => {
         console.log(results);
         if (results.length === 0) {
             return res.render('login', {
+                success: false,
                 message: "couldn't find email in database"
             });
-        } hashedPassword.then( (res) => {
-            // hashedPassword returns a promise
-            if ( res !== results[0].passowrd ) {
-                console.log(results[0].password);  
-                console.log(res);
+        } bcrypt.compare(password, results[0].password, (err2, res2) => {
+            if (err2) {
                 return res.render('login', {
-                    message: "password incorrect!"
+                    success: false,
+                    message: "server error"
                 });
+            } if (res2) {
+                //passwords match - successful login
+                return res.render('login', {
+                    success: true,
+                    email: results[0].email,
+                    username: results[0].name,
+                    message: "login successful"
+                });                  
+            } else {
+                return res.render('login', {
+                    success: false,
+                    message: "password incorrect!"
+                });                
             }
-        });
-         
-            // db.query(`INSERT INTO users SET ?`, { name:name, email:email, cell:cell, password:hashedPassword }, (err, results) => {
-            //     if(err) {
-            //         console.log(err);
-            //     } else {
-            //         console.log(results);
-            //         return res.render('register', {
-            //             message: 'user registered successfully'
-            //         });
-            //     }
-            // })
-        return res.render('login', {
-            message: "login successful"
-        });
+        })
         
+        // hashedPassword.then( (res2) => {
+        //     // hashedPassword returns a promise
+        //     if ( res2 !== results[0].password ) {
+        //         return res.render('login', {
+        //             success: false,
+        //             message: "password incorrect!"
+        //         });
+        //     } else {
+        //         //passwords match - successful login
+        //         return res.render('login', {
+        //             success: true,
+        //             message: "login successful"
+        //         });   
+        //     }
+        // }); 
+    
     });
+
 }

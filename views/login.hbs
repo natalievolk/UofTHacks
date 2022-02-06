@@ -20,6 +20,7 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet" media="all">
         <!--Own style-->
         <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/login-register.css">
     </head>
     <body>
         
@@ -31,34 +32,46 @@
                 <li><a href="/register">Register</a></li>
             </ul>
         </nav>
-        <h1>Register</h1>
-        <div>Log into your account</div>
+        <div class="headings">
+            <h1>Login</h1>
+            <div>Log into your account</div>
+        </div>
 
-        <div class="container mt-4">
-            <div class="card">
-                <div class="card-header">
-                    Login
-                </div>
-                <div class="card-body">
-                    <!--send POST requrest, make sure name attribute is present for POST to work!-->
-                    <form action="/login/login" method="POST">
-                        <div class="form-group">
-                          <label for="email">Your Email</label>
-                          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                          <small id="emailHelp" class="form-text text-muted">Forgot?</small>
-                        </div>
-                        <div class="form-group">
-                          <label for="password">Password</label>
-                          <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                        </div>
+            <div class="container mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        Login
+                    </div>
+                    <div class="card-body">
+                        <!--send POST requrest, make sure name attribute is present for POST to work!-->
+                        <form action="/login/login" method="POST">
+                            <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">Forgot?</small>
+                            </div>
+                            <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                            </div>
 
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+
             <!--receive message from /controllers/auth.js - ERROR or success -->
            {{#if message}}
+                {{#if success}}
+                <h4 class="alert alert-success mt-4">{{message}}
+                    <div>Welcome Home, {{username}}!</div>
+                    <div>Your email: {{email}}</div>
+                </h4>
+                
+                <button type="button" class="btn btn-info"><a href="/journals">Take me to my journals</a></button>
+                {{else}}
                 <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                {{/if}}
             {{/if}}
         </div>
     </body>

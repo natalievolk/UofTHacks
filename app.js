@@ -8,11 +8,25 @@ var mysql = require('mysql');
 
 // dotenv - store passwords & secure info
 const dotenv = require('dotenv');
+
 dotenv.config({ path: './.env' })
 
 // all handlebar files must be in views directory
 app.set('view engine', 'hbs');
 const publicDirectory = path.join(__dirname, './public'); //__dirname is current directory
+
+const hbs = require('hbs');
+
+const partialsPath = path.join(__dirname, './views/partials');
+hbs.registerPartials(partialsPath);
+
+hbs.registerHelper('times', function(n, block) {
+  var accum = '';
+  for(var i = 0; i < n; ++i)
+      accum += block.fn("journal entriessssss");
+  console.log(accum);
+  return accum;
+});
 
 var db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
@@ -25,7 +39,7 @@ var db = mysql.createConnection({
 db.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  // note in query we CANNOT put quotes!! Leave id, name, cell, etc. as is...
+  // note for query in ticks we CANNOT put quotes!! Leave id, name, cell, etc. as is...
   db.query(
     `CREATE TABLE IF NOT EXISTS uofthacks.users( 
       id INT NOT NULL AUTO_INCREMENT ,
@@ -38,7 +52,7 @@ db.connect(function(err) {
     ENGINE = InnoDB;`,
     function (err, result) {
       if (err) throw err;
-    console.log("Login table called users created");
+    console.log("Login table users created");
   });
 });
 
@@ -53,6 +67,7 @@ app.use(express.static(publicDirectory));
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 app.use('/login', require('./routes/login'));
+// app.use('/journals', require('./routes/journals'));
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3001, 

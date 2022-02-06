@@ -20,6 +20,7 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet" media="all">
         <!--Own style-->
         <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/login-register.css">
     </head>
     <body>
         
@@ -31,8 +32,11 @@
                 <li><a href="/register">Register</a></li>
             </ul>
         </nav>
+        <div class="headings">
         <h1>Register</h1>
         <div>sign up and get reminders to take your journals!</div>
+        <div id="promise">We'll never share your personal information, we promise</div>
+        </div>
 
         <div class="container mt-4">
             <div class="card">
@@ -44,12 +48,12 @@
                     <form action="/auth/register" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="first name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="first name is okay!">
                         </div>
                         <div class="form-group">
                           <label for="email">Your email</label>
-                          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="we'll never share your email with anyone else.">
+                          {{!-- <small id="emailHelp" class="form-text text-muted"></small> --}}
                         </div>
                         <div class="form-group">
                             <label for="cell">Phone number</label>
@@ -72,9 +76,15 @@
                     </form>
                 </div>
             </div>
-            <!--receive message from /controllers/auth.js - ERROR -->
+            <!--receive message from /controllers/auth.js - error or success -->
            {{#if message}}
-                <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                {{#if success}}
+                    <h4 class="alert alert-success mt-4">{{message}}</h4>
+                    <div><a href="/login">Login</a></div>
+                    {{else}}
+                    <h4 class="alert alert-danger mt-4">{{message}}</h4>
+                {{/if}}
+        
             {{/if}}
         </div>
     </body>

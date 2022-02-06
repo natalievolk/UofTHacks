@@ -1,5 +1,5 @@
 //handle register the user
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); // add later
 const bcrypt = require('bcryptjs'); //password hasing
 
 const mysql = require('mysql');
@@ -33,10 +33,12 @@ exports.register = (req, res) => {
         }
         else if (results.length > 0) {
             return res.render('register', {
+                success: false,
                 message: 'the email or phone is already in use!'
             });
         } else if ( password !== passwordConfirm) {
             return res.render('register', {
+                success: false,
                 message: "passwords don't match!"
             });
         } else {
@@ -49,6 +51,7 @@ exports.register = (req, res) => {
                 } else {
                     console.log(results);
                     return res.render('register', {
+                        success: true,
                         message: 'user registered successfully'
                     });
                 }

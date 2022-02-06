@@ -5,10 +5,10 @@ def get_db_connection():
 
     config = {
     'user': 'root',
-    'password': 'root',
+    'password': '',
     'host': 'localhost',
-    'port': 8888,
-    'unix_socket': '/Applications/MAMP/tmp/mysql/mysql.sock',
+    'port': 3306,
+    # 'unix_socket': '/Applications/MAMP/tmp/mysql/mysql.sock',
     'database': 'uofthacks',
     'raise_on_warnings': True
     }

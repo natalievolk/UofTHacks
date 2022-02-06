@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!--Icon for Chrome tab-->
+      <!-- <link rel="shortcut icon" type="image/x-icon" href="images/logo/QW_logo_transparent_32px.png"/> -->
+      <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Journal is an app that reminds you to document your day.">
+        <meta charset="utf-8">
+        <title>Journal Reminders</title>
+
+        <!--Make consistent across browsers-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!--Bootstrap-->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" media="all">
+        <!--Own style-->
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/journals.css">
+    </head>
+    <body>
+        
+        <nav>
+            <h4>Journally</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="login">Login</a></li>
+                <li><a href="register">Register</a></li>
+            </ul>
+        </nav>
+        <h1 id="page-title">&#10024Qingyuan's Journals&#10024</h1>
+        <!--
+        {{#times 10}}
+            {{!-- <div class="entry-container" id={{date}}>
+                <p class="date">{{date}}</p>
+                <p class="text">{{journal_entry}}</p>
+            </div> --}}
+            <div>{{this}}</div>
+        {{/times}}j
+        -->
+        <div id="search-box-container">
+            <form action="search.html" method="GET">
+              <label for="imageDate">Search for a special day's entry!</label>
+              <input type="date" id="imageDate" name="date" required>
+              <input type="submit" class="btn btn-info" id="search-date-button">
+            </form>
+            <div id="date-restriction">Please enter a day between 1995-06-20 and today.</div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm">
+                    <p class="date">2022-2-5</p>
+                    <p class="text">
+                        Today I worked on the hackathon all day with Natalie. It's been fun and filled with a lot fo learning. Yayyy we love restoration!
+                    </p>
+                </div>
+                <div class="col col-sm">
+                    <p class="date">2022-2-2</p>
+                    <p class="text">Restoration is so important for our mental health. I realized that whenever I feel burnt out, taking a break makes me so much more productive - it might be counterintuitive but trust me, breaks help your productivity.
+                    </p>
+                </div>
+                <div class="col col-sm">
+                    <p class="date">2022-2-1</p>
+                    <p class="text">They looked at each other with lonely feelings, like two open, old-fashioned ostriches loving at a very witty Christening, which had piano music playing in the background and two smelly uncles laughing to the beat.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-sm">
+                    <p class="date">2022-1-31</p>
+                    <p class="text">Hmmm February is almost over!! It's been so quick can't believe we're 1/12th of the way through 2022</p>
+                </div>
+
+                <div class="col col-sm">
+                    <p class="date">2022-1-30</p>
+                    <p class="text">There's always something to look forward to. I didn't have a great day but tomorrow will be better :)</p>
+                </div>
+
+                <div class="col col-sm">
+                    <p class="date">2022-1-29</p>
+                    <p class="text">This is my first journal. I had a great day</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-sm">
+                    <p class="date">2022-1-28</p>
+                    <p class="text">
+                        Today it snowed quite a bit. I like snow. But they also bother me sometimes because it's annoying to trek in them.
+                    </p>
+                </div>
+
+                <div class="col col-sm">
+                    <p class="date">2022-1-25</p>
+                    <p class="text">Texting you seems like texting into nothingness. Hopefully I can look back at these a year later and restore my old self</p>
+                </div>
+
+                <div class="col col-sm">
+                    <p class="date">2022-1-23</p>
+                    <p class="text">This is my first journal. I had a great day with peace. The most important thing is being content. There's this saying that those that are content are often happy.</p>
+                </div>
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="github" viewBox="0 0 24 24">
+                <path d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"/>
+            </symbol>
+        </svg>
+
+        <div class="container" id="footer-container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <div class="col-md-4 d-flex align-items-center">
+
+                <span class="text-muted">&copy; 2022 Qingyuan & Natalie</span>
+              </div>
+          
+              <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-muted" href="https://github.com/natalievolk/UofTHacks" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
+              </ul>
+            </footer>
+          </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+
+.entry-container {
+    width:25%;
+}
+
+nav {
+    height:75px;
+}
+
+#page-title {
+    text-align: center;
+    margin-top:30px;
+}
+.container{
+    clear:all;
+    margin-top:100px;
+}
+.col {
+    background-color: #eaf3fa;
+    margin-right:10px;
+    margin-top:10px;
+    border-radius: 5px;
+    height:250px;
+    overflow:auto;
+}
+
+.button-info {
+    font-size:80%;
+
+}
+
+#search-box-container {
+    float:right;
+    margin-right:8%;
+}
+.date {
+    text-align:right;
+    color:blue;
+}
+
+.text {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}

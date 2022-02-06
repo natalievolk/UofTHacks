@@ -8,13 +8,19 @@ router.get('/', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-    //render index.hbs page
+    //render register.hbs page
     res.render('register');
 });
 
 router.get('/login', (req, res) => {
-    //render index.hbs page
+    //render login.hbs page
     res.render('login');
+});
+
+router.get('/journals', (req, res) => {
+    //render journals.hbs page
+    // console.log(req);
+    res.render('partials/journals');
 });
 
 

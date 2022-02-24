@@ -52,7 +52,7 @@ db.connect(function(err) {
       PRIMARY KEY (id)
     )
     ENGINE = InnoDB;`,
-    function (err, result) {
+    function (err, res) {
       if (err) throw err;
     console.log("Login table users created");
   });
@@ -70,7 +70,7 @@ app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 app.use('/login', require('./routes/login'));
 // app.use('/journals', require('./routes/journals'));
-
+const PORT = process.env.PORT || 3001
 // start the server listening for requests
-app.listen(process.env.PORT || 3001, 
-	() => console.log("Server is running..."));
+app.listen(PORT, 
+	() => console.log(`Server is running... on port ${PORT}`));

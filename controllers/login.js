@@ -11,7 +11,6 @@ var db = mysql.createConnection({
 });
 
 exports.login = (req, res) => {
-    console.log(req.body);
     // sample req.body
     //{
     //   email: 'bob123@mail.com',
@@ -30,7 +29,6 @@ exports.login = (req, res) => {
         if (err) {
             console.log(err);
         }
-        console.log(results);
         if (results.length === 0) {
             return res.render('login', {
                 success: false,
@@ -56,24 +54,6 @@ exports.login = (req, res) => {
                     message: "Password incorrect!"
                 });                
             }
-        })
-        
-        // hashedPassword.then( (res2) => {
-        //     // hashedPassword returns a promise
-        //     if ( res2 !== results[0].password ) {
-        //         return res.render('login', {
-        //             success: false,
-        //             message: "password incorrect!"
-        //         });
-        //     } else {
-        //         //passwords match - successful login
-        //         return res.render('login', {
-        //             success: true,
-        //             message: "login successful"
-        //         });   
-        //     }
-        // }); 
-    
+        })    
     });
-
 }

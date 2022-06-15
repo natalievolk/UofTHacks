@@ -1,11 +1,8 @@
-// create an express app
 const express = require("express");
 const path = require("path");
 const app = express();
-
-
+const hbs = require('hbs');
 var mysql = require('mysql');
-
 // dotenv - store passwords & secure info
 const dotenv = require('dotenv');
 
@@ -13,9 +10,6 @@ dotenv.config({ path: './.env' })
 
 // all handlebar files must be in views directory
 app.set('view engine', 'hbs');
-const publicDirectory = path.join(__dirname, './public'); //__dirname is current directory
-
-const hbs = require('hbs');
 
 const partialsPath = path.join(__dirname, './views/partials');
 hbs.registerPartials(partialsPath);
@@ -40,7 +34,6 @@ var db = mysql.createConnection({
 // require user to put phone number
 db.connect(function(err) {
   if (err) throw err;
-  console.log("Connected!");
   // note for query in ticks we CANNOT put quotes!! Leave id, name, cell, etc. as is...
   db.query(
     `CREATE TABLE IF NOT EXISTS uofthacks.users( 
@@ -54,7 +47,6 @@ db.connect(function(err) {
     ENGINE = InnoDB;`,
     function (err, res) {
       if (err) throw err;
-    console.log("Login table users created");
   });
 });
 
@@ -63,7 +55,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // use the express-static middleware - everything in the /public directory to be used (HTML, CSS, JS)
-app.use(express.static(publicDirectory));
+app.use(express.static('public'));
 
 // get routes
 app.use('/', require('./routes/pages'));
